@@ -1,13 +1,13 @@
-### PYLOG ###
+### BetterLog ###
 ## IMPORTS ##
 import time
 from datetime import datetime
 
-# create mod file
+# create log file
 try:
-    open("mod.txt", "r")
+    open("log.txt", "r")
 except:
-    open("mod.txt", "x")
+    open("log.txt", "x")
 
 ## COLOURS DEFINE ##
 class colours:
@@ -47,7 +47,7 @@ def log(message, msg_error=level.info):
     message_structure=message_state[0]+" -- "+"("+colour+msg_error+colours.ENDC+") "+colour+message_state[1]+colours.ENDC
     print(message_structure)
     message_structure=message_state[0]+" -- "+"("+msg_error+") "+message_state[1]
-    mod=open("mod.txt","a")
+    mod=open("log.txt","a")
     mod.write(message_structure+"\n")
 
 ## ASK ##
@@ -61,7 +61,7 @@ def ask(message):
     message_structure=message_state[0]+" -- "+"("+colour+msg_error+colours.ENDC+") "+colour+message_state[1]+colours.ENDC+"\n"
     answer = input(message_structure)
     message_structure=message_state[0]+" -- "+"("+msg_error+") "+message_state[1]+"\n"
-    mod=open("mod.txt","a")
+    mod=open("log.txt","a")
     mod.write(message_structure+answer+"\n")
     mod.close()
     return answer
